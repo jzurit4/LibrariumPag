@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/style.css">
-  <title>Descarga nuestra App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Descarga Librarium</title>
+
+    <script>            
+            function actualizar() {
+            const esMobile = navigator.maxTouchPoints > 0; // Detecta si es movil
+            const linkDescarga = document.getElementById('link-descarga');
+            const qrImagen = document.getElementById('qr-imagen');
+
+            // Muestra el botón o el QR según la condición
+            if (esMobile) {
+                linkDescarga.classList.remove('escondido'); // Muestra el botón
+                qrImagen.classList.add('escondido'); // Oculta el QR
+            } else {
+                linkDescarga.classList.add('escondido'); // Oculta el botón
+                qrImagen.classList.remove('escondido'); // Muestra el QR
+            }
+        }
+        // Escuchar cambios en el tamaño de la ventana
+        window.addEventListener('resize', actualizar);
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', actualizar);
+    </script>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Descarga nuestra App</h1>
-    <p>Escanea el código QR desde tu PC o haz clic en el botón si estás usando un teléfono móvil.</p>
+    <div class="contenedor">
+        <h1>LIBRARIUM</h1>
+        <p>Lleva un registro de los libros que lees, fácil y rápido</p>
+        <a id="link-descarga" href="https://drive.google.com/uc?export=download&id=1d5q0Ll5cR4LKJI8TexSI_AY1_r582Rfa" class="escondido" >Descargar</a>    
+        <img id="qr-imagen" src="img/codigo_qr.png" alt="QR para descargar la app" class="escondido">
 
-    <!-- Imagen para pantallas grandes -->
-    <img class="image" src="/img/codigo_qr.png" alt="Código QR para descargar la app">
+    </div>
 
-    <!-- Botón para pantallas pequeñas -->
-    <a class="button" href="https://drive.google.com/uc?export=download&id=1wqXVr8iIJ21zthgYywbEJRhFXIJRAupJ" target="_blank">
-      Descargar Librarium
-    </a>
-  </div>
 </body>
 </html>
-
