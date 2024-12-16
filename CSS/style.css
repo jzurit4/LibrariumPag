@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/img/nosotros.jpg);
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+
+  .container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .image {
+    display: none;
+    margin: 20px auto;
+  }
+
+  .button {
+    display: none;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Media Query para pantallas grandes (PC) */
+  @media (min-width: 768px) {
+    .image {
+      display: block;
+      width: 80%;
+    }
+  }
+
+  /* Media Query para pantallas pequeñas (teléfono) */
+  @media (max-width: 767px) {
+    .button {
+      display: inline-block;
+    }
+  }
